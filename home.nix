@@ -91,19 +91,23 @@
       },
     })
 
-    -- Persistent workspaces (adjust names/count to taste)
-    hl.workspace_rule({ workspace = "1", monitor = "DP-2", persistent = true, default_name = "web" })
-    hl.workspace_rule({ workspace = "2", monitor = "DP-2", persistent = true, default_name = "code" })
-    hl.workspace_rule({ workspace = "3", monitor = "DP-2", persistent = true, default_name = "chat" })
-    hl.workspace_rule({ workspace = "4", monitor = "DP-2", persistent = true, default_name = "game" })
-    hl.workspace_rule({ workspace = "5", monitor = "DP-2", persistent = true, default_name = "design" })
-
     -- Keybinds
     local mainMod = "SUPER"
     local ipc = "noctalia msg "
 
     hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
     hl.bind(mainMod .. " + C", hl.dsp.window.close())
+
+    -- Switch workspace: mod + [1-9,0]
+    -- Move focused window to workspace: mod + shift + [1-9,0]
+    for i = 1, 10 do
+      local key = i % 10 -- 10 -> 0
+      hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+      hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+    end
+
+    -- Move window by holding mod + left click drag
+    hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 
     hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
     hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
