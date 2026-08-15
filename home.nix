@@ -64,6 +64,11 @@
 
     -- Compositor look & feel
     hl.config({
+
+      input = {
+        kb_layout  = "pl",
+      },
+
       general = {
         gaps_in  = 5,
         gaps_out = 10,
