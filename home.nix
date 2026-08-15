@@ -17,6 +17,26 @@
     noctalia-shell
   ];
 
+
+  programs.vscode = {
+    enable = true;
+  };
+
+  programs.ssh = {
+    enable = true;
+    addKeysToAgent = "yes";
+
+    matchBlocks = {
+      "github.com" = {
+        hostname = "github.com";
+        user = "git";
+        identityFile = "~/.ssh/id_ed25519";
+      };
+    };
+  };
+
+  services.ssh-agent.enable = true;
+
   home.file.".config/hypr/hyprland.lua".text = ''
     hl.monitor({
         output   = "DP-2",
