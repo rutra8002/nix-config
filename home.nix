@@ -108,6 +108,8 @@
 
     -- Move window by holding mod + left click drag
     hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+    -- Resize window by holding mod + right click drag
+    hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
     hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
     hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
