@@ -16,6 +16,10 @@
     userName = "ruternix";
     userEmail = "arturkummer08@gmail.com";
   };
+  
+  programs.vscode = {
+    enable = true;
+  };  
 
   programs.zen-browser = {
     enable = true;
@@ -27,6 +31,19 @@
           install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/ublock-origin/latest.xpi";
           installation_mode = "normal_installed";
         };
+      };
+    };
+  };
+
+  programs.ssh = {
+    enable = true;
+    addKeysToAgent = "yes";
+
+    matchBlocks = {
+      "github.com" = {
+        hostname = "github.com";
+        user = "git";
+        identityFile = "~/.ssh/id_ed25519";
       };
     };
   };
