@@ -1,6 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
+  imports = [
+    inputs.zen-browser.homeModules.twilight
+  ];
+
   home.username = "ruter";
   home.homeDirectory = "/home/ruter";
   home.stateVersion = "26.05";
@@ -13,24 +17,16 @@
     userEmail = "arturkummer08@gmail.com";
   };
 
-  home.packages = with pkgs; [
-    noctalia-shell
-  ];
-
-
-  programs.vscode = {
+  programs.zen-browser = {
     enable = true;
-  };
+    setAsDefaultBrowser = true;
 
-  programs.ssh = {
-    enable = true;
-    addKeysToAgent = "yes";
-
-    matchBlocks = {
-      "github.com" = {
-        hostname = "github.com";
-        user = "git";
-        identityFile = "~/.ssh/id_ed25519";
+    policies = {
+      ExtensionSettings = {
+        "uBlock0@raymondhill.net" = {
+          install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/ublock-origin/latest.xpi";
+          installation_mode = "normal_installed";
+        };
       };
     };
   };
@@ -62,13 +58,7 @@
     hl.env("XCURSOR_SIZE", "24")
     hl.env("HYPRCURSOR_SIZE", "24")
 
-    -- Compositor look & feel
     hl.config({
-
-      input = {
-        kb_layout  = "pl",
-      },
-
       general = {
         gaps_in  = 5,
         gaps_out = 10,
@@ -89,6 +79,12 @@
           vibrancy = 0.1696,
         },
       },
+      input = {
+        kb_layout  = "pl",
+        kb_variant = "",
+        kb_model   = "",
+        kb_options = "",
+      },
     })
 
     -- Keybinds
@@ -98,17 +94,13 @@
     hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
     hl.bind(mainMod .. " + C", hl.dsp.window.close())
 
-    -- Switch workspace: mod + [1-9,0]
-    -- Move focused window to workspace: mod + shift + [1-9,0]
     for i = 1, 10 do
-      local key = i % 10 -- 10 -> 0
+      local key = i % 10
       hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
       hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
     end
 
-    -- Move window by holding mod + left click drag
     hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
-    -- Resize window by holding mod + right click drag
     hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
     hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
@@ -118,21 +110,18 @@
     hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(ipc .. "session lock"))
     hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"))
 
-    -- Media keys
     hl.bind("XF86AudioRaiseVolume",   hl.dsp.exec_cmd(ipc .. "volume-up"))
     hl.bind("XF86AudioLowerVolume",   hl.dsp.exec_cmd(ipc .. "volume-down"))
     hl.bind("XF86AudioMute",          hl.dsp.exec_cmd(ipc .. "volume-mute"))
     hl.bind("XF86MonBrightnessUp",    hl.dsp.exec_cmd(ipc .. "brightness-up"))
     hl.bind("XF86MonBrightnessDown",  hl.dsp.exec_cmd(ipc .. "brightness-down"))
 
-    -- Float Noctalia's settings window
     hl.window_rule({
         match = { class = "dev.noctalia.Noctalia" },
         float = true,
         size  = { 1080, 920 },
     })
 
-    -- Blur Noctalia's own surfaces, disable Hyprland's layer anim for them
     hl.layer_rule({
       name = "noctalia",
       match = {
