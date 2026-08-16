@@ -40,7 +40,7 @@
   home.file.".config/hypr/hyprland.lua".text = ''
     hl.monitor({
         output   = "DP-2",
-        mode     = "3440x1440@60",
+        mode     = "3440x1440@180",
         position = "0x0",
         scale    = 1.25,
     })
