@@ -134,9 +134,9 @@
     hl.bind("XF86MonBrightnessDown",  hl.dsp.exec_cmd(ipc .. "brightness-down"))
 
     -- Screenshots
-    hl.bind("Print", hl.dsp.exec_cmd("ipc .. screenshot-region"))
-    hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("ipc .. screenshot-fullscreen pick"))
-    hl.bind(mainMod .. " + SHIFT + Print", hl.dsp.exec_cmd("ipc .. screenshot-fullscreen all"))
+    hl.bind("Print", hl.dsp.exec_cmd(ipc .. "screenshot-region"))
+    hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(ipc .. "screenshot-fullscreen pick"))
+    hl.bind(mainMod .. " + SHIFT + Print", hl.dsp.exec_cmd(ipc .. "screenshot-fullscreen all"))
 
     hl.window_rule({
         match = { class = "dev.noctalia.Noctalia" },
