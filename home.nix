@@ -133,6 +133,11 @@
     hl.bind("XF86MonBrightnessUp",    hl.dsp.exec_cmd(ipc .. "brightness-up"))
     hl.bind("XF86MonBrightnessDown",  hl.dsp.exec_cmd(ipc .. "brightness-down"))
 
+    -- Screenshots
+    hl.bind("Print", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call plugin:screenshot takeScreenshot region"))
+    hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call plugin:screenshot takeScreenshot window"))
+    hl.bind(mainMod .. " + SHIFT + Print", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call plugin:screenshot takeScreenshot output"))
+
     hl.window_rule({
         match = { class = "dev.noctalia.Noctalia" },
         float = true,
