@@ -79,6 +79,11 @@
   programs.git.enable = true;
   programs.hyprland.enable = true;
 
+  programs.steam = {
+    enable = true;
+  };
+
+
   services.playerctld.enable = true;
 
   environment.systemPackages = with pkgs; [
