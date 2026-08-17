@@ -79,6 +79,7 @@
   programs.git.enable = true;
   programs.hyprland.enable = true;
 
+  services.playerctld.enable = true;
 
   environment.systemPackages = with pkgs; [
     kitty

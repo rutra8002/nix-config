@@ -80,6 +80,13 @@ hl.bind("XF86AudioMute",          hl.dsp.exec_cmd(ipc .. "volume-mute"))
 hl.bind("XF86MonBrightnessUp",    hl.dsp.exec_cmd(ipc .. "brightness-up"))
 hl.bind("XF86MonBrightnessDown",  hl.dsp.exec_cmd(ipc .. "brightness-down"))
 
+-- Media playback 
+hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"))
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"))
+hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"))
+hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"))
+hl.bind("XF86AudioStop",  hl.dsp.exec_cmd("playerctl stop"))
+
 -- Screenshots
 hl.bind("Print", hl.dsp.exec_cmd(ipc .. "screenshot-region"))
 hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(ipc .. "screenshot-fullscreen pick"))
