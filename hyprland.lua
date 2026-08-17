@@ -48,6 +48,8 @@ hl.config({
     kb_variant = "",
     kb_model   = "",
     kb_options = "",
+    accel_profile  = "flat",
+    sensitivity    = 0.0,
   },
 })
 
