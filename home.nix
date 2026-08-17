@@ -21,6 +21,17 @@
     enable = true;
   };  
 
+  # Rust development: RustRover IDE + the actual toolchain it drives.
+  # rustc/cargo/rust-analyzer/etc are separate from the IDE itself.
+  home.packages = with pkgs; [
+    jetbrains.rust-rover
+    rustc
+    cargo
+    rust-analyzer
+    rustfmt
+    clippy
+  ];
+
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;
