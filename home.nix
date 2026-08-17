@@ -30,6 +30,7 @@
     rust-analyzer
     rustfmt
     clippy
+    gcc
   ];
 
   programs.zen-browser = {
