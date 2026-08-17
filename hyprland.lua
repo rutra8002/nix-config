@@ -22,6 +22,14 @@ end)
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 
+-- Force Firefox-based browsers (Zen) to run as native Wayland clients,
+-- otherwise they fall back to XWayland and screen-share/PipeWire capture breaks.
+hl.env("MOZ_ENABLE_WAYLAND", "1")
+
+-- Force Electron apps (Discord, VSCode, etc.) onto native Wayland + Ozone,
+-- same reasoning: XWayland Electron apps can't use the PipeWire portal properly.
+hl.env("NIXOS_OZONE_WL", "1")
+
 hl.config({
   general = {
     gaps_in  = 5,
