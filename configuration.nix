@@ -79,6 +79,20 @@
   programs.git.enable = true;
   programs.hyprland.enable = true;
 
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    config.common.default = [ "hyprland" ];
+  };
+
   programs.steam = {
     enable = true;
   };
