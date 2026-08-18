@@ -34,6 +34,7 @@
     obs-studio
     vesktop
     cutechess
+    yazi
   ];
 
   programs.zen-browser = {
