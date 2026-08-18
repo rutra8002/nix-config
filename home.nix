@@ -31,6 +31,8 @@
     rustfmt
     clippy
     gcc
+    obs-studio
+    discord
   ];
 
   programs.zen-browser = {
