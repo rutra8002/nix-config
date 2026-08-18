@@ -77,7 +77,9 @@
   programs.noctalia.enable = true;
   services.displayManager.noctalia-greeter.enable = true;
   programs.git.enable = true;
+  
   programs.hyprland.enable = true;
+  programs.hyprland.withUWSM = true;
 
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.greetd.enableGnomeKeyring = true;
