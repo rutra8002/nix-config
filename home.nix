@@ -33,6 +33,7 @@
     gcc
     obs-studio
     vesktop
+    cutechess
   ];
 
   programs.zen-browser = {
