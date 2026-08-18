@@ -74,6 +74,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   
+  environment.sessionVariables = { XDG_CURRENT_DESKTOP = "Hyprland"; XDG_SESSION_TYPE = "wayland"; XDG_SESSION_DESKTOP = "Hyprland"; }; 
+
   programs.noctalia.enable = true;
   services.displayManager.noctalia-greeter.enable = true;
   programs.git.enable = true;
