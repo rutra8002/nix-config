@@ -32,7 +32,7 @@
     clippy
     gcc
     obs-studio
-    discord
+    vesktop
   ];
 
   programs.zen-browser = {
