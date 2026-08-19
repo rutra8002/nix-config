@@ -35,6 +35,9 @@
     vesktop
     cutechess
     yazi
+    fastfetch
+    termius
+    obsidian
   ];
 
   programs.zen-browser = {
