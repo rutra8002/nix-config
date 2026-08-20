@@ -38,6 +38,7 @@
     fastfetch
     termius
     obsidian
+    jetbrains.pycharm
   ];
 
   programs.zen-browser = {
