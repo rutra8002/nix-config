@@ -42,7 +42,15 @@
     python3
     python3Packages.pip
     python3Packages.virtualenv
+    nautilus
   ];
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "inode/directory" = "org.gnome.Nautilus.desktop";
+    };
+  };
 
   programs.zen-browser = {
     enable = true;
