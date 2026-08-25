@@ -39,6 +39,7 @@
     termius
     obsidian
     jetbrains.pycharm
+    jetbrains.webstorm
     python3
     python3Packages.pip
     python3Packages.virtualenv
