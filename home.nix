@@ -44,6 +44,7 @@
     python3Packages.pip
     python3Packages.virtualenv
     nautilus
+    nodejs_22
   ];
 
   xdg.mimeApps = {
