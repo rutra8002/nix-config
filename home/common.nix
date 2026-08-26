@@ -43,6 +43,8 @@
     python3Packages.virtualenv
     nautilus
     nodejs_22
+    gimp
+    godot_4
   ];
 
   xdg.mimeApps = {
