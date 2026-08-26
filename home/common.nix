@@ -21,8 +21,6 @@
     enable = true;
   };  
 
-  # Rust development: RustRover IDE + the actual toolchain it drives.
-  # rustc/cargo/rust-analyzer/etc are separate from the IDE itself.
   home.packages = with pkgs; [
     jetbrains.rust-rover
     rustc
@@ -82,6 +80,4 @@
   };
 
   services.ssh-agent.enable = true;
-
-  home.file.".config/hypr/hyprland.lua".source = ./hyprland.lua;
 }
