@@ -13,8 +13,8 @@
 
   programs.git = {
     enable = true;
-    userName = "ruternix";
-    userEmail = "arturkummer08@gmail.com";
+    settings.user.name = "ruternix";
+    settings.user.email = "arturkummer08@gmail.com";
   };
   
   programs.vscode = {
