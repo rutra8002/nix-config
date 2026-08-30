@@ -60,9 +60,9 @@ hl.config({
     accel_profile  = "flat",
     sensitivity    = 0.0,
   },
-  -- xwayland = {
-  --   force_zero_scaling = true,
-  -- },
+  xwayland = {
+    force_zero_scaling = true,
+  },
 })
 
 -- Keybinds
