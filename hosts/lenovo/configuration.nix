@@ -29,8 +29,5 @@
     XDG_SESSION_DESKTOP = "Hyprland";
   };
 
-  security.pam.loginLimits = [
-  { domain = "*"; type = "soft"; item = "nofile"; value = "524288"; }
-  { domain = "*"; type = "hard"; item = "nofile"; value = "524288"; }
-];
+  systemd.user.extraConfig = "DefaultLimitNOFILE=524288";
 }
