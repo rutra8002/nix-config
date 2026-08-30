@@ -74,6 +74,7 @@
     nodejs_22
     gimp
     godot_4
+    heroic
   ];
 
   xdg.mimeApps = {
