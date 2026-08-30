@@ -74,7 +74,9 @@
     nodejs_22
     gimp
     godot_4
-    heroic
+    (heroic.override {
+      extraPkgs = pkgs': with pkgs'; [ gamescope gamemode ];
+    })
   ];
 
   xdg.mimeApps = {

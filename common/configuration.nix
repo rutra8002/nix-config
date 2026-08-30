@@ -68,6 +68,9 @@
     kitty
   ];
 
+  programs.gamemode.enable = true;
+  programs.gamescope.enable = true;
+
   nix.gc = {
     automatic = true;
     dates = "weekly";
