@@ -8,7 +8,10 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+     enable = true;
+     enable32Bit = true;
+   };
 
   networking.networkmanager.enable = true;
 
