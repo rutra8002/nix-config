@@ -86,6 +86,9 @@ hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center")
 hl.bind(mainMod .. " + Comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. "panel-toggle clipboard"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(ipc .. "session lock"))
+
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
+
 hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"))
 
 hl.bind("XF86AudioRaiseVolume",   hl.dsp.exec_cmd(ipc .. "volume-up"))
