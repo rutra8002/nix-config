@@ -74,6 +74,7 @@
     nodejs_22
     gimp
     godot_4
+    vlc
     libreoffice
     (heroic.override {
       extraPkgs = pkgs': with pkgs'; [ gamescope gamemode ];
