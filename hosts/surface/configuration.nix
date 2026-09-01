@@ -11,10 +11,7 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
-  microsoft-surface.ipts.enable = true;
   hardware.microsoft-surface.kernelVersion = "stable";
-  microsoft-surface.surface-control.enable = true;
-  users.users.ruter.extraGroups = [ "surface-control" ];
 
   hardware.sensor.iio.enable = true;
 
