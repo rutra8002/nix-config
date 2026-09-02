@@ -74,10 +74,12 @@
   programs.gamemode.enable = true;
   programs.gamescope.enable = true;
 
+  nix.settings.auto-optimise-store = true;
+
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 30d";
+    options = "--delete-older-than 7d";
   };
 
   system.stateVersion = "26.05";
