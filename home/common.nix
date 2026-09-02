@@ -48,6 +48,7 @@
     XCURSOR_THEME = "Bibata-Modern-Classic";
     XCURSOR_SIZE = "24";
     HYPRCURSOR_SIZE = "24";
+    MOZ_ENABLE_WAYLAND = "1";
   };
 
   home.packages = with pkgs; [
