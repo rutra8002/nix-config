@@ -67,9 +67,6 @@
 
   services.playerctld.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    kitty
-  ];
 
   programs.gamemode.enable = true;
   programs.gamescope.enable = true;
