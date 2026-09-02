@@ -41,6 +41,7 @@
   users.users."ruter" = {
     isNormalUser = true;
     description = "ruter";
+    shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
@@ -48,6 +49,7 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.git.enable = true;
+  programs.fish.enable = true;
 
   services.gnome.gnome-keyring.enable = true;
 
