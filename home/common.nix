@@ -80,6 +80,7 @@
     (heroic.override {
       extraPkgs = pkgs': with pkgs'; [ gamescope gamemode ];
     })
+    bitwarden-desktop
   ];
 
   xdg.mimeApps = {
