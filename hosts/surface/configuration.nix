@@ -22,4 +22,12 @@
   
   services.power-profiles-daemon.enable = true;
   services.thermald.enable = true;
+
+  services.iptsd = {
+    enable = true;
+    config = {
+      Touch.DisableOnPalm = true;
+      Touch.DisableOnStylus = true;
+    };
+  };
 }
