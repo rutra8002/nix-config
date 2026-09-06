@@ -87,7 +87,7 @@ hl.bind(mainMod .. " + Comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. "panel-toggle clipboard"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(ipc .. "session lock"))
 
-hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(ipc .. "panel-toggle noctalia/wallhaven:browser"))
+hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(ipc .. "panel-toggle noctalia/wallhaven:browser"))
 
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 
