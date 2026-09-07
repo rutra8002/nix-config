@@ -13,6 +13,12 @@
      enable32Bit = true;
    };
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Warsaw";
