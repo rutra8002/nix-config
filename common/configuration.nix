@@ -72,7 +72,6 @@
 
   programs.steam = {
     enable = true;
-    extraPackages = with pkgs; [ gnutls libssh2 ];
   };
 
   services.playerctld.enable = true;
