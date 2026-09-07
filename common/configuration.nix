@@ -12,7 +12,8 @@
      enable = true;
      enable32Bit = true;
    };
-
+ 
+  boot.kernelParams = [ "bluetooth.disable_ertm=1" ];
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
