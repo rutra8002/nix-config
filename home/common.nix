@@ -68,11 +68,9 @@
     obsidian
     jetbrains.pycharm
     jetbrains.webstorm
-    (python3.withPackages (ps: with ps; [
-      pip
-      virtualenv
-      tkinter
-    ]))
+    python3Full
+    python3Packages.pip
+    python3Packages.virtualenv
     nautilus
     nodejs_22
     gimp
