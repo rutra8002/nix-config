@@ -68,9 +68,7 @@
     obsidian
     jetbrains.pycharm
     jetbrains.webstorm
-    python3Full
-    python3Packages.pip
-    python3Packages.virtualenv
+    uv
     nautilus
     nodejs_22
     gimp
