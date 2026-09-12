@@ -31,6 +31,12 @@ hl.env("MOZ_ENABLE_WAYLAND", "1")
 -- same reasoning: XWayland Electron apps can't use the PipeWire portal properly.
 hl.env("NIXOS_OZONE_WL", "1")
 
+-- nvidia 
+hl.env("LIBVA_DRIVER_NAME", "nvidia")
+hl.env("GBM_BACKEND", "nvidia-drm")
+hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+hl.env("WLR_NO_HARDWARE_CURSORS", "1")
+
 hl.config({
   general = {
     gaps_in  = 5,
