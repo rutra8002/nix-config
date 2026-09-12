@@ -79,6 +79,7 @@
       extraPkgs = pkgs': with pkgs'; [ gamescope gamemode ];
     })
     bitwarden-desktop
+    mangohud
   ];
 
   xdg.mimeApps = {
