@@ -6,6 +6,12 @@
     ./hardware-configuration.nix
   ];
 
+  fileSystems."/mnt/data" = {
+    device = "/dev/disk/by-uuid/f2112494-a3e8-49d1-b8b5-32114736ee9b";
+    fsType = "ext4";
+    options = [ "defaults" "nofail" ];
+  };
+
   networking.hostName = "lenovo";
 
   services.xserver.videoDrivers = [ "nvidia" ];
