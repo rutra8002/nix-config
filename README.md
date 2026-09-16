@@ -36,3 +36,6 @@ Update flake inputs:
 ```
 nix flake update
 ```
+
+## Showcase
+![screenshot](docs/s.png)
