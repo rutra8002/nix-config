@@ -12,30 +12,94 @@ Currently supported hosts:
 
 ## Usage
 
-Clone the repository:
+
+## Installing on a fresh system
+
+Boot the NixOS installer and open a terminal.
+
+### 1. Enable flakes
+
+```
+export NIX_CONFIG="experimental-features = nix-command flakes"
+```
+
+### 2. Clone the repository
 
 ```
 git clone https://github.com/rutra8002/nix-config
 cd nix-config
 ```
 
-Build a configuration for lenovo:
+### 3. Prepare the disk
+
+Partition and mount your target disk at `/mnt`, with the EFI partition mounted at `/mnt/boot`.
+
+For example:
 
 ```
-sudo nixos-rebuild switch --flake .#lenovo
+mount /dev/sda2 /mnt
+mkdir -p /mnt/boot
+mount /dev/sda1 /mnt/boot
 ```
 
-Build a configuration for surface:
+### 4. Generate hardware configuration
+
+**Don't use the existing `hardware-configuration.nix`**
+
+Generate one for the target machine:
+
+#### surface
+```
+nixos-generate-config --root /mnt --show-hardware-config \
+  > hosts/surface/hardware-configuration.nix
+```
+
+#### lenovo
+```
+nixos-generate-config --root /mnt --show-hardware-config \
+  > hosts/lenovo/hardware-configuration.nix
+```
+
+
+### 5. Install the configuration
+
+Install directly from the flake:
+
+```
+nixos-install --root /mnt --flake .#surface
+```
+
+Or:
+
+```
+nixos-install --root /mnt --flake .#lenovo
+```
+
+
+### 6. Reboot
+
+After installation:
+
+```
+reboot
+```
+
+The configuration creates the `ruter` user. Log in as `ruter` after reboot.
+
+## Applying a configuration after installation
+
+Once the repository is cloned:
 
 ```
 sudo nixos-rebuild switch --flake .#surface
 ```
 
-Update flake inputs:
+or:
 
 ```
-nix flake update
+sudo nixos-rebuild switch --flake .#lenovo
 ```
+---
 
 ## Showcase
 ![screenshot](docs/s.png)
