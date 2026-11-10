@@ -52,6 +52,12 @@
   };
 
   home.packages = with pkgs; [
+    jetbrains.clion
+    cmake
+    gnumake
+    gdb
+
+
     jetbrains.rust-rover
     rustc
     cargo
