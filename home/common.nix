@@ -73,7 +73,7 @@
     termius
     obsidian
     jetbrains.pycharm
-    jetbrains.webstorm
+    jetbrains.phpstorm
     uv
     nautilus
     nodejs_22
