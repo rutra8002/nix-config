@@ -8,4 +8,9 @@
   home.packages = with pkgs; [
     prismlauncher
   ];
+
+  programs.kitty = {
+    enable = true;
+    settings.remember_window_size = "no";
+  };
 }
