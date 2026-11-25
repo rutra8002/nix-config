@@ -22,6 +22,7 @@
   ];
 
   programs.noctalia.enable = true;
+  services.upower.enable = true;
   services.displayManager.noctalia-greeter.enable = true;
   programs.hyprland.enable = true;
   programs.hyprland.withUWSM = true;
