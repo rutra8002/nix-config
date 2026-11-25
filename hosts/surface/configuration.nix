@@ -8,6 +8,8 @@
 
   networking.hostName = "surface";
 
+  virtualisation.virtualbox.host.enable = true;
+
   boot.kernelParams = [
     "intel_pstate=hwp_dynamic_boost=0"
     "pcie_aspm=force"

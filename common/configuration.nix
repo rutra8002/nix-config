@@ -49,7 +49,7 @@
     isNormalUser = true;
     description = "ruter";
     shell = pkgs.fish;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "vboxusers" ];
     packages = with pkgs; [];
   };
 
