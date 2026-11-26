@@ -17,6 +17,11 @@
       };
     };
 
+    gowin-eda = {
+      url = "github:scottwillmoore/nix-gowin-eda";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
@@ -39,6 +44,18 @@
         };
     in
     {
+      packages.x86_64-linux.gowin-eda-education =
+        let
+          system = "x86_64-linux";
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        in
+        pkgs.callPackage ./packages/gowin-eda.nix {
+          gowinEda = inputs.gowin-eda.packages.${system}.gowin-eda-education;
+        };
+
       nixosConfigurations = {
         lenovo = mkHost { hostname = "lenovo"; };
 

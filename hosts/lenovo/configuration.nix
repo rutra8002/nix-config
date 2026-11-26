@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -9,6 +9,7 @@
   networking.hostName = "lenovo";
 
   virtualisation.virtualbox.host.enable = true;
+  services.udev.packages = [ inputs.self.packages.${pkgs.system}.gowin-eda-education ];
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;

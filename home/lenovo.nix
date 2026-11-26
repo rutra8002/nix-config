@@ -7,6 +7,7 @@
 
   home.packages = with pkgs; [
     prismlauncher
+    inputs.self.packages.${pkgs.system}.gowin-eda-education
   ];
 
   programs.kitty = {

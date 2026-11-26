@@ -99,6 +99,21 @@ or:
 ```
 sudo nixos-rebuild switch --flake .#lenovo
 ```
+
+## Gowin EDA on Lenovo
+
+The `gowin-eda-education` flake package combines the Gowin EDA Education IDE
+with Gowin's separate Linux Programmer archive. It exposes `gw_ide` and
+`programmer`; the Lenovo Home Manager profile installs both, and the NixOS
+configuration adds USB access rules for supported Gowin cables.
+
+To run the IDE directly from the repository:
+
+```
+nix run .#gowin-eda-education
+```
+
+This package uses Gowin's Education edition and is subject to its terms of use.
 ---
 
 ## Showcase
