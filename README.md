@@ -117,5 +117,4 @@ This package uses Gowin's Education edition and is subject to its terms of use.
 ---
 
 ## Showcase
-![screenshot](docs/s.png)
-[video](docs/showcase.mp4)
+[![Watch the showcase](docs/s.png)](https://youtu.be/BlwDyDxHa-Q)
