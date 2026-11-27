@@ -8,6 +8,11 @@
 
   networking.hostName = "lenovo";
 
+  boot.supportedFilesystems = [ "ntfs" ];
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  security.polkit.enable = true;
+
   virtualisation.virtualbox.host.enable = true;
   services.udev.packages = [ inputs.self.packages.${pkgs.system}.gowin-eda-education ];
 

@@ -10,6 +10,16 @@
     inputs.self.packages.${pkgs.system}.gowin-eda-education
   ];
 
+  systemd.user.services.hyprpolkitagent = {
+    Unit.Description = "Hyprland Polkit Authentication Agent";
+    Service = {
+      Type = "simple";
+      ExecStart = "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent";
+      Restart = "on-failure";
+    };
+    Install.WantedBy = [ "graphical-session.target" ];
+  };
+
   programs.kitty = {
     enable = true;
     settings.remember_window_size = "no";
