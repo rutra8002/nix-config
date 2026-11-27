@@ -1,6 +1,11 @@
 {
   description = "Multi-host NixOS configuration";
 
+  nixConfig = {
+    extra-substituters = [ "http://141.144.237.90:8080" ];
+    extra-trusted-public-keys = [ "lenovo-cache-1:PASTE_CONTENTS_OF_cache-pub.pem" ];
+  };
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 

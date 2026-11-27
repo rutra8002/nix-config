@@ -6,6 +6,13 @@
     ./hardware-configuration.nix
   ];
 
+  nix.settings = {
+    extra-substituters = [ "http://141.144.237.90:8080" ];
+    extra-trusted-public-keys = [
+      (lib.removeSuffix "\n" (builtins.readFile ../../cache-pub.pem))
+    ];
+  };
+
   networking.hostName = "surface";
 
   virtualisation.virtualbox.host.enable = true;
