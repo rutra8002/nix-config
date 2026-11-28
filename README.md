@@ -66,7 +66,7 @@ nixos-generate-config --root /mnt --show-hardware-config \
 Install directly from the flake:
 
 ```
-nixos-install --root /mnt --flake .#surface
+sudo -E nixos-install --root /mnt --flake .#surface
 ```
 
 Or:
