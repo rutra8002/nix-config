@@ -3,7 +3,7 @@
 
   nixConfig = {
     extra-substituters = [ "http://141.144.237.90:8080" ];
-    extra-trusted-public-keys = [ "lenovo-cache-1:PASTE_CONTENTS_OF_cache-pub.pem" ];
+    extra-trusted-public-keys = [ "lenovo-cache-1:v7H2hLG7klfw4JqymNByd/GbyRuLAZ5XJpMpHrcxYp4=" ];
   };
 
   inputs = {
